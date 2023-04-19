@@ -1,2 +1,2 @@
-# electron-desktop
-electron应用
+# Electron
+Electron project 
