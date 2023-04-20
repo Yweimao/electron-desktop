@@ -5,6 +5,7 @@ out
 /dist
 
 package-lock.json
+npminstall-debug.log
 
 # local env files
 .env.local
