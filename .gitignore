@@ -4,6 +4,9 @@ out
 .DS_Store
 /dist
 
+package-lock.json
+npminstall-debug.log
+
 # local env files
 .env.local
 .env.*.local
