@@ -3,29 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <title>Electron Desktop</title>
-    <style>
-      body {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background-color: #abe3f1;
-        -webkit-app-region: drag;
-      }
-
-      img {
-        width: 200px;
-      }
-
-      h1 {
-        margin: 50px;
-      }
-    </style>
   </head>
 
+  <style>
+    .container {
+      display: flex;
+      flex-direction: column;
+    }
+    textarea {
+      margin-top: 10px;
+    }
+    button {
+      margin-top: 10px;
+    }
+  </style>
+
   <body>
-    <img src="https://img.zlib.cn/electron.webp" />
-    <h1>Electron 实战训练营</h1>
+    <div class="container">
+      <input id="input" type="text" placeholder="请输入保存路径" />
+      <textarea
+        name=""
+        id="textarea"
+        cols="30"
+        rows="10"
+        placeholder="请输入文本内容"
+      ></textarea>
+      <button class="btn">保存</button>
+    </div>
   </body>
+  <script>
+    const el = document.getElementsByClassName("btn")[0];
+    el.onclick = function () {
+      const filePath = document.getElementById("input").value || "";
+      const content = document.getElementById("textarea").value;
+
+      if (!content) {
+        alert("请输入文本内容");
+        return;
+      }
+
+      window.electronAPI.saveFileContent({ filePath, content });
+    };
+  </script>
 </html>
